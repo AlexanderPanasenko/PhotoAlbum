@@ -68,10 +68,9 @@
 		5290A84E285DD3A100B03B4E /* HW14_PhotoAlbum */ = {
 			isa = PBXGroup;
 			children = (
-				5290A86E285DD90D00B03B4E /* DetailView */,
-				5290A869285DD4EF00B03B4E /* Album */,
-				5290A864285DD47000B03B4E /* Model */,
 				5290A863285DD43400B03B4E /* Data Source */,
+				5290A864285DD47000B03B4E /* Model */,
+				5290A875285DDFD600B03B4E /* ViewControllers */,
 				5290A858285DD3A400B03B4E /* Assets.xcassets */,
 				5290A85A285DD3A400B03B4E /* LaunchScreen.storyboard */,
 				5290A85D285DD3A400B03B4E /* Info.plist */,
@@ -115,6 +114,15 @@
 				5290A873285DD98700B03B4E /* OtherCell.swift */,
 			);
 			path = DetailView;
+			sourceTree = "<group>";
+		};
+		5290A875285DDFD600B03B4E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5290A869285DD4EF00B03B4E /* Album */,
+				5290A86E285DD90D00B03B4E /* DetailView */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
