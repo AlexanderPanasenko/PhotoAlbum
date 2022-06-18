@@ -13,7 +13,7 @@ var mediaTypes = [Albums]()
 var other = [Albums]()
 var album: Albums?
 
-class AlbumViewController: UIViewController {
+class AlbumsViewController: UIViewController, UICollectionViewDelegate {
     
     static let sectionHeaderName = "section header name"
     
@@ -35,7 +35,7 @@ class AlbumViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(
             HeaderView.self,
-            forSupplementaryViewOfKind: AlbumViewController.sectionHeaderName,
+            forSupplementaryViewOfKind: AlbumsViewController.sectionHeaderName,
             withReuseIdentifier: HeaderView.reuseIdentifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
@@ -118,9 +118,9 @@ class AlbumViewController: UIViewController {
             heightDimension: .estimated(44))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: AlbumViewController.sectionHeaderName,
+            elementKind: AlbumsViewController.sectionHeaderName,
             alignment: .top)
-
+        
         let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
         section.boundarySupplementaryItems = [sectionHeader]
         return section
@@ -137,7 +137,7 @@ class AlbumViewController: UIViewController {
                 heightDimension: .estimated(44))
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerSize,
-                elementKind: AlbumViewController.sectionHeaderName,
+                elementKind: AlbumsViewController.sectionHeaderName,
                 alignment: .top)
             let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
             section.boundarySupplementaryItems = [sectionHeader]
@@ -152,7 +152,7 @@ class AlbumViewController: UIViewController {
         }
         return layout
     }
-   
+    
     
     func configureMyAlbumsLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
@@ -172,7 +172,7 @@ class AlbumViewController: UIViewController {
             heightDimension: .estimated(44))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: AlbumViewController.sectionHeaderName,
+            elementKind: AlbumsViewController.sectionHeaderName,
             alignment: .top)
         
         let section = NSCollectionLayoutSection(group: group)
@@ -182,30 +182,30 @@ class AlbumViewController: UIViewController {
     }
     
     func configurePeopleAndPlacesAlbumsLayout() -> NSCollectionLayoutSection {
-      let itemSize = NSCollectionLayoutSize(
-        widthDimension: .fractionalWidth(1.0),
-        heightDimension: .fractionalWidth(1.0))
-      let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-      let groupSize = NSCollectionLayoutSize(
-        widthDimension: .absolute(200),
-        heightDimension: .absolute(200))
-      let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-      group.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
-
-      let headerSize = NSCollectionLayoutSize(
-        widthDimension: .fractionalWidth(1.0),
-        heightDimension: .estimated(44))
-      let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-        layoutSize: headerSize,
-        elementKind: AlbumViewController.sectionHeaderName,
-        alignment: .top)
-
-      let section = NSCollectionLayoutSection(group: group)
-      section.boundarySupplementaryItems = [sectionHeader]
-      section.orthogonalScrollingBehavior = .groupPaging
-
-      return section
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalWidth(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(200),
+            heightDimension: .absolute(200))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(44))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: AlbumsViewController.sectionHeaderName,
+            alignment: .top)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.orthogonalScrollingBehavior = .groupPaging
+        
+        return section
     }
     
     func configureMediaTypesLayout() -> NSCollectionLayoutSection {
@@ -226,23 +226,13 @@ class AlbumViewController: UIViewController {
             heightDimension: .estimated(44))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: AlbumViewController.sectionHeaderName,
+            elementKind: AlbumsViewController.sectionHeaderName,
             alignment: .top)
         
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [sectionHeader]
         section.orthogonalScrollingBehavior = .groupPaging
         return section
-    }
-}
-
-extension AlbumViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        album = item
-        let controller = AlbumDetailViewController()
-        navigationController?.pushViewController(controller, animated: true)
-        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 

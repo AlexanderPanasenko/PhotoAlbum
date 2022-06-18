@@ -25,7 +25,7 @@ class HeaderView: UICollectionReusableView {
         addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         //    label.adjustsFontForContentSizeCategory = true
-        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.font = UIFont.preferredFont(forTextStyle: .title2)
         
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),

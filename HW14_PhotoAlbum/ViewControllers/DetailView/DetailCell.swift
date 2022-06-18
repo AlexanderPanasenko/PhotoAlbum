@@ -24,23 +24,23 @@ class DetailCell: UICollectionViewListCell {
     }
     
     func configure() {
-      contentContainer.translatesAutoresizingMaskIntoConstraints = false
-      contentView.addSubview(contentContainer)
-
-      imageView.translatesAutoresizingMaskIntoConstraints = false
-      contentContainer.addSubview(imageView)
+        contentContainer.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(contentContainer)
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        contentContainer.addSubview(imageView)
         imageView.backgroundColor = .gray
-      NSLayoutConstraint.activate([
-        contentContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-        contentContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-        contentContainer.topAnchor.constraint(equalTo: contentView.topAnchor),
-        contentContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-
-        imageView.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor),
-        imageView.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor),
-        imageView.bottomAnchor.constraint(equalTo: contentContainer.bottomAnchor),
-        imageView.topAnchor.constraint(equalTo: contentContainer.topAnchor)
-      ])
+        NSLayoutConstraint.activate([
+            contentContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            contentContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            contentContainer.topAnchor.constraint(equalTo: contentView.topAnchor),
+            contentContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            imageView.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentContainer.bottomAnchor),
+            imageView.topAnchor.constraint(equalTo: contentContainer.topAnchor)
+        ])
     }
 }
 

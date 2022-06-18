@@ -27,24 +27,24 @@ class OtherCell: UICollectionViewListCell {
     
     func configure() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-      contentView.addSubview(nameLabel)
+        contentView.addSubview(nameLabel)
         nameLabel.textColor = .systemBlue
         nameLabel.font = UIFont(name: "Helvetica", size: 18)
         nameLabel.adjustsFontForContentSizeCategory = true
-      imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imageView)
-      NSLayoutConstraint.activate([
-        imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-        imageView.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor, constant: -20),
-        imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-        imageView.widthAnchor.constraint(equalToConstant: contentView.frame.height/1.5),
-        imageView.heightAnchor.constraint(equalToConstant: contentView.frame.height/1.5),
-        
-        nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor),
-        nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-        nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-      ])
+        NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            imageView.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor, constant: -20),
+            imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: contentView.frame.height/1.5),
+            imageView.heightAnchor.constraint(equalToConstant: contentView.frame.height/1.5),
+            
+            nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+        ])
     }
 }
 

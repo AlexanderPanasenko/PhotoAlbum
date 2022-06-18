@@ -13,7 +13,7 @@ class AlbumCell: UICollectionViewListCell {
     let titleLabel = UILabel()
     let foregroundView = UIImageView()
     let itemsCountLabel = UILabel()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupHierarchy()
