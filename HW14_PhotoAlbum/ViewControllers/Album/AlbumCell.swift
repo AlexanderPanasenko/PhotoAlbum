@@ -33,7 +33,7 @@ extension AlbumCell {
         foregroundView.tintColor = .gray
         container.backgroundColor = .lightGray
         titleLabel.text = "Album name"
-        itemsCountLabel.text = "0"
+        itemsCountLabel.text = "1"
         container.translatesAutoresizingMaskIntoConstraints = false
         foregroundView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

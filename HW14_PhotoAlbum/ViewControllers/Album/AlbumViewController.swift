@@ -20,7 +20,7 @@ class AlbumsViewController: UIViewController, UICollectionViewDelegate {
     var albumsCollectionView: UICollectionView! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Albums"
+        title = "Альбомы"
         appendItems()
         configureCollectionView()
         configureDataSource()
@@ -78,6 +78,7 @@ class AlbumsViewController: UIViewController, UICollectionViewDelegate {
                 cell.nameLabel.text = other[indexPath.row].name
                 cell.imageView.image = other[indexPath.row].icon
                 return cell
+                
             }
         }
         
